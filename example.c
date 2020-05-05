@@ -1,6 +1,6 @@
 
 #include <wchar.h>
-#include <malloc.h>
+#include <stdlib.h>
 #include "messagebox.h"
 
 int main(){
