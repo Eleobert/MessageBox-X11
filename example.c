@@ -29,7 +29,7 @@ int main(){
         buttons[0].label = L"No";
         buttons[1].label = L"Yes";
         res = Messagebox("Answer this question",
-                         L"Do you like to promgram in C language?", buttons, 2);
+                         L"Do you like to program in C language?", buttons, 2);
         if(res == 1){
             buttons[0].label = L"Accept";
             res = Messagebox("Oops",
