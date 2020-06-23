@@ -29,7 +29,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
-#include <malloc.h>
+#include <stdlib.h>
 #include "messagebox.h"
 
 
@@ -178,9 +178,9 @@ int Messagebox(const char* title, const wchar_t* text, const Button* buttons, in
                         &missingCharset_list, &missingCharset_count, NULL);
 
     if (missingCharset_count) {
-        fprintf(stderr, "Missing charsets: ");
+        fprintf(stderr, "Missing charsets :\n");
         for(int i = 0; i < missingCharset_count; i++){
-            printf(missingCharset_list[i]);
+            fprintf(stderr, "%s\n", missingCharset_list[i]);
         }
         XFreeStringList(missingCharset_list);
     }
