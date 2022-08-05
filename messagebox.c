@@ -183,6 +183,7 @@ int Messagebox(const char* title, const wchar_t* text, const Button* buttons, in
             fprintf(stderr, "%s\n", missingCharset_list[i]);
         }
         XFreeStringList(missingCharset_list);
+        missingCharset_list = NULL;
     }
     //------------------------------------------------------------------------------------------------------------------
 
@@ -308,7 +309,8 @@ int Messagebox(const char* title, const wchar_t* text, const Button* buttons, in
     }
     free(text_splitted);
     free(btsData);
-    XFreeStringList(missingCharset_list);
+    if (missingCharset_list)
+        XFreeStringList(missingCharset_list);
     XDestroyWindow(dpy, win);
     XFreeFontSet(dpy, fs);
     XFreeGC(dpy, textGC);
